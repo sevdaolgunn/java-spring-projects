@@ -9,10 +9,11 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>hayvanat_bahcesi</module>
-        <module>personel-yonetim-sistemi</module>
-        <module>kullanici-kontrol-sistemi</module>
-        <module>cicek-kayit-sistemi</module>
+        <module>hayvanatBahcesi</module>
+        <module>personelYonetimSistemi</module>
+        <module>kullaniciKontrolSistemi</module>
+        <module>cicekKayitSistemi</module>
+        <module>workerEngineer</module>
     </modules>
 
     <properties>
