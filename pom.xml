@@ -14,8 +14,7 @@
         <module>kullaniciKontrolSistemi</module>
         <module>cicekKayitSistemi</module>
         <module>workerEngineer</module>
-        <module>unboxingAutoboxingExample</module>
-        <module>ccikti</module>
+        <module>UnboxingAutoboxingExample</module>
     </modules>
 
     <properties>
