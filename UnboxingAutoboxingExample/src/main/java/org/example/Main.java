@@ -16,7 +16,7 @@ public class Main {
             sum = sum + number;  // Integer -> int ----- UNBOXING
         }
 
-        System.out.println("Sum of numbers: " + sum);
+        System.out.println("Sum of numbers: " + sum);  // sum of the value
 
     }
 }
