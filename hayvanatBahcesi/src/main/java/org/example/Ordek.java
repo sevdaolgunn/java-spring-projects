@@ -10,6 +10,7 @@ public class Ordek extends Hayvan{
 
     public Ordek(String ad, String cins, int yas){
         this(ad, yas);
+
         this.cins = cins;
     }
 
