@@ -1,15 +1,15 @@
 package koza.dev.firstspringproject.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "user_info")
 @AllArgsConstructor
 @NoArgsConstructor
 @Setter
+@Getter
+@Builder
 public class User {
 
     @Id
