@@ -13,13 +13,20 @@ public class ServiceController {
     private final UserService userService;
 
     @PostMapping
-    private void createUser(@RequestParam String name,String surname){
+    private void createUser(@RequestParam String name, @RequestParam String surname){
         userService.createUser(name, surname);
     }
 
     @GetMapping("/{userId}")
     private User getUser(@PathVariable Integer userId){
         return userService.getUser(userId);
+    }
+
+    @PutMapping("/{userId}")
+    private void updateUser(@PathVariable Integer userId, @RequestParam String name, @RequestParam String surname){
+        userService.updateUser(userId,name,surname);
+
+
     }
 
     @DeleteMapping("/{userId}")
