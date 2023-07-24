@@ -6,7 +6,7 @@ public class Main {
 
         hayvanlar[0] = new Kedi("Minnoş",3);
         hayvanlar[1] = new Köpek("Karabaş",5);
-        hayvanlar[2] = new Ördek("Pamuk",2);
+        hayvanlar[2] = new Ordek("Pamuk",2);
 
         for (Hayvan hayvan : hayvanlar){
             System.out.println("Ad: " +hayvan.getAd() + "\nYaş: " +hayvan.getYas());
