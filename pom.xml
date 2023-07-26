@@ -15,6 +15,7 @@
         <module>cicekKayitSistemi</module>
         <module>workerEngineer</module>
         <module>UnboxingAutoboxingExample</module>
+        <module>personDTO</module>
     </modules>
 
     <properties>
