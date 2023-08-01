@@ -1,5 +1,6 @@
 package koza.dev.firstspringproject.service;
 
+import koza.dev.firstspringproject.dto.UserDto;
 import koza.dev.firstspringproject.entity.User;
 import koza.dev.firstspringproject.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -7,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -22,8 +24,19 @@ public class UserService {
 
     }
 
-    public User getUser(Integer userId) {
-        return repository.findById(userId).get();
+    public UserDto getUser(Integer userId) {
+        Optional<User> optionalUser = repository.findById(userId);
+        return UserDto.builder()
+                .id(optionalUser.get().getId())
+                .name(optionalUser.get().getName())
+                .surname(optionalUser.get().getSurname())
+                .build();
+    }
+
+    public List<User> getAllUser() {
+        List<User> users = repository.findAll();
+        return users;
+
     }
 
     public void updateUser(Integer userId,String name, String surname){

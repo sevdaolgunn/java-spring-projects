@@ -1,14 +1,17 @@
 package koza.dev.firstspringproject.controller;
 
+import koza.dev.firstspringproject.dto.UserDto;
 import koza.dev.firstspringproject.entity.User;
 import koza.dev.firstspringproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 @RequiredArgsConstructor
-public class ServiceController {
+public class UserController {
 
     private final UserService userService;
 
@@ -18,8 +21,13 @@ public class ServiceController {
     }
 
     @GetMapping("/{userId}")
-    private User getUser(@PathVariable Integer userId){
+    private UserDto getUser(@PathVariable Integer userId){
         return userService.getUser(userId);
+    }
+
+    @GetMapping
+    private List<User> getAllUser(){
+        return userService.getAllUser();
     }
 
     @PutMapping("/{userId}")
