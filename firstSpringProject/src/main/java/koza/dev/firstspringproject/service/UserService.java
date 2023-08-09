@@ -1,5 +1,6 @@
 package koza.dev.firstspringproject.service;
 
+import koza.dev.firstspringproject.converter.UserConverter;
 import koza.dev.firstspringproject.dto.UserDto;
 import koza.dev.firstspringproject.entity.User;
 import koza.dev.firstspringproject.repository.UserRepository;
@@ -15,6 +16,7 @@ import java.util.Optional;
 public class UserService {
 
     private final UserRepository repository;
+    private final UserConverter userConverter;
 
     public void createUser(String name, String surname){
         User user = new User();
@@ -33,9 +35,14 @@ public class UserService {
                 .build();
     }
 
-    public List<User> getAllUser() {
-        List<User> users = repository.findAll();
-        return users;
+    public List<UserDto> getAllUser() {
+        List<User> users = repository.findAll();// user obje listesi
+        List<UserDto> userDtoList = new ArrayList<>();
+
+        for (User user : users){
+            userDtoList.add(userConverter.convertAsDto(user));
+        }
+        return userDtoList;// user dto obje listesi
 
     }
 
